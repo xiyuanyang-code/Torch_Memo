@@ -1,4 +1,4 @@
-# Memo: Using GPU oin Pytorch
+# Memo: Using GPU in Pytorch
 import torch
 import argparse
 import numpy as np
@@ -61,8 +61,6 @@ def backCPU(tensor_on_gpu: torch.Tensor):
     print(f"Devices: {tensor_back.device}")
     print(f"Types: {type(tensor_back)}")
     return tensor_back
-
-
 
 
 if __name__ == "__main__":
