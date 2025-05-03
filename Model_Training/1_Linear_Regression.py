@@ -1,13 +1,13 @@
-'''
+"""
 Author: Xiyuan Yang   xiyuan_yang@outlook.com
 Date: 2025-03-19 16:38:23
 LastEditors: Xiyuan Yang   xiyuan_yang@outlook.com
 LastEditTime: 2025-03-19 20:43:05
 FilePath: /pytorch-deep-learning/exercise/exercise1.py
-Description: 
+Description:
 Do you code and make progress today?
-Copyright (c) 2025 by Xiyuan Yang, All Rights Reserved. 
-'''
+Copyright (c) 2025 by Xiyuan Yang, All Rights Reserved.
+"""
 
 # The initial Plotting image for Model Training (Linear Regression)
 import torch
@@ -20,8 +20,12 @@ from matplotlib.font_manager import FontProperties
 torch.manual_seed(2025)
 
 # Font settings
-font_georgia = FontProperties(fname="/GPFS/rhome/xiyuanyang/.local/share/fonts/georgia.ttf")
-font_songti = FontProperties(fname="/GPFS/rhome/xiyuanyang/.local/share/fonts/songti.ttc")
+font_georgia = FontProperties(
+    fname="/GPFS/rhome/xiyuanyang/.local/share/fonts/georgia.ttf"
+)
+font_songti = FontProperties(
+    fname="/GPFS/rhome/xiyuanyang/.local/share/fonts/songti.ttc"
+)
 
 # Device configuration
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -42,22 +46,24 @@ X_test, y_test = X[indices[train_size:]], y[indices[train_size:]]
 
 # Plot split data
 plt.figure(figsize=(10, 6))
-plt.scatter(x=X_train, y=y_train, color='red', label="Train data", alpha=0.3, s=5)
-plt.scatter(x=X_test, y=y_test, color='blue', label="Test data", alpha=0.3, s=5)
+plt.scatter(x=X_train, y=y_train, color="red", label="Train data", alpha=0.3, s=5)
+plt.scatter(x=X_test, y=y_test, color="blue", label="Test data", alpha=0.3, s=5)
 plt.xlabel("X axis")
 plt.ylabel("Y axis")
 plt.legend()
 plt.savefig("splitted_1.png")
 plt.close()
 
+
 # Define the model
 class LinearRegressionModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.linear_layer = nn.Linear(in_features=1, out_features=1)
-    
+
     def forward(self, x):
         return self.linear_layer(x)
+
 
 # Initialize model, loss function, and optimizer
 model = LinearRegressionModel().to(device)
@@ -92,7 +98,9 @@ for epoch in range(epochs):
 
     # Print progress every 100 epochs
     if epoch % 100 == 0:
-        print(f"Epoch: {epoch} | Train Loss: {loss.item():.4f} | Test Loss: {test_loss.item():.4f}")
+        print(
+            f"Epoch: {epoch} | Train Loss: {loss.item():.4f} | Test Loss: {test_loss.item():.4f}"
+        )
 
 # Plot training and testing losses
 plt.figure(figsize=(10, 6))
@@ -107,9 +115,5 @@ plt.close()
 
 # Print model parameters
 from pprint import pprint
+
 pprint(model.state_dict())
-
-
-
-
-
