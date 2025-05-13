@@ -6,4 +6,16 @@ For a programming language, reading and trying to build your own code in practic
 
 ## Table of Contents
 
-- Using GPU on Pytorch
+- `construct.py`: Checking Dependicies.
+
+- `Using_GPU.py`: How to use GPU to make parallel computations in Pytorch.
+
+- `Tensor_operations.ipynb`: Basic Operations for **Tensors** in Pytorch.
+
+- `Test_GPU_speed.py`: Test for Testing GPU speed in matrixmultiplication.
+
+- **dir**: `Model_Training`: **Templates** for classic Deep Learning Methods and Neural Network Trainings.
+
+  - `Linear_Regression.py`: Basic Linear Regression Model.
+
+  - **dir**: `CNN_basic`: docs to be done.
