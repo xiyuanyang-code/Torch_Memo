@@ -141,7 +141,9 @@ def main():
         "numpy": ">=1.18.0",
     }
 
-    assert Check1_Package(required_packages=required_packages)
+    # !fix: For package requirements is very slow
+    # assert Check1_Package(required_packages=required_packages)
+    print("\033[91mCheck for Package 1 skipped for it is too slow, you can cancel the comments in line 145 to reopen it manually.\033[0m")    
     assert Check2_FileStructure()
 
 
