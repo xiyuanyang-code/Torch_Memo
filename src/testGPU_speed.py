@@ -1,9 +1,13 @@
-import time
+import os
 import torch
 import argparse
 import matplotlib.pyplot as plt
 import torch.utils.benchmark as benchmark
 from torch.cuda import synchronize
+
+# restrict the numbers for running this program
+# *Of course you can comment this if you are rich enough...
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
 
 
 def test_speed(iterations):
