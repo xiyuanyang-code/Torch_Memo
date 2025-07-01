@@ -61,7 +61,7 @@ def backCPU(tensor_on_gpu: torch.Tensor):
     """_summary_: Moving Tensors Back to CPU (numpy)"""
     tensor_back = tensor_on_gpu.cpu().numpy()
     print("Moving Back on CPU")
-    print(f"Devices: {tensor_back.device}")
+    # print(f"Devices: {tensor_back.device}")
     print(f"Types: {type(tensor_back)}")
     return tensor_back
 

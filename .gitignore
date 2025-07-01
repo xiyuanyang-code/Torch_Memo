@@ -5,3 +5,8 @@ todolist.md
 /data/
 /img/
 /log/
+**/__pycache__/
+
+**/test_dir
+**/data/
+**/runs
